@@ -54,4 +54,4 @@ To modify the view that handles password entry You need to first publish the vie
 php artisan vendor:publish --provider="ElicDev\SiteProtection\SiteProtectionServiceProvider" --tag=views
 ```
 
-You can make the changes in `resources/vendor/views/site-protection/site-protection.blade.php`.
+You can make the changes in `resources/vendor/views/site-protection/site-protection-form.blade.php`.
