@@ -53,7 +53,7 @@
             <div class="content">
                 <div class="title">Password protected</div>
 
-                <form method="POST">
+                <form method="GET">
                     {{ csrf_field() }}
 
                     <div class="form-group">
