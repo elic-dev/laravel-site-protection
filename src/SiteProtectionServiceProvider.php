@@ -14,5 +14,9 @@ class SiteProtectionServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/views', 'site-protection');
+
+        $this->publishes([
+            __DIR__ . '/views' => resource_path('views/vendor/site-protection'),
+        ], 'views');
     }
 }
