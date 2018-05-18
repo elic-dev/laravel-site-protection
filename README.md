@@ -15,7 +15,9 @@ This does not protect any assets files like css or images.
 composer require elic-dev/laravel-site-protection
 ```
 
-## Laravel 5
+## Laravel >= 5.2
+
+This package requires at least the Laravel Framework of version **5.2**.
 
 ### Setup
 
@@ -48,10 +50,12 @@ user using the old password to re-enter a password.
 
 ### Customization
 
-To modify the view that handles password entry You need to first publish the view using this command:
+You can modify the view that handles password entry by publishing the views to your resource folder.
+
+Run the following command:
 
 ```
 php artisan vendor:publish --provider="ElicDev\SiteProtection\SiteProtectionServiceProvider" --tag=views
 ```
 
-You can make the changes in `resources/vendor/views/site-protection/site-protection-form.blade.php`.
+You can now make the changes in `resources/vendor/views/site-protection/site-protection-form.blade.php`.

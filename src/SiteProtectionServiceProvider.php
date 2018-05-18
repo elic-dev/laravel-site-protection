@@ -7,6 +7,16 @@ use Illuminate\Support\ServiceProvider;
 class SiteProtectionServiceProvider extends ServiceProvider
 {
     /**
+     * Register bindings in the container.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+    }
+
+    /**
      * Bootstrap the application services.
      *
      * @return void
