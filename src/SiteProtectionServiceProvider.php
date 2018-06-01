@@ -13,7 +13,7 @@ class SiteProtectionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        
     }
 
     /**
@@ -27,6 +27,7 @@ class SiteProtectionServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/views' => resource_path('views/vendor/site-protection'),
+            __DIR__.'/config' => config_path(''),
         ], 'views');
     }
 }

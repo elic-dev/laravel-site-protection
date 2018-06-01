@@ -16,5 +16,12 @@
         "psr-4": {
             "ElicDev\\SiteProtection\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ElicDev\\SiteProtection\\SiteProtectionServiceProvider"
+            ]
+        }
     }
 }
