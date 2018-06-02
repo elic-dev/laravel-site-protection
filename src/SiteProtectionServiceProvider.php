@@ -13,7 +13,9 @@ class SiteProtectionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/site-protection.php', 'site-protection'
+        );
     }
 
     /**
@@ -27,7 +29,10 @@ class SiteProtectionServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/views' => resource_path('views/vendor/site-protection'),
-            __DIR__.'/config' => config_path(''),
         ], 'views');
+
+        $this->publishes([
+            __DIR__ . '/config' => config_path(),
+        ], 'config');
     }
 }

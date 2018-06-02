@@ -15,11 +15,9 @@ This does not protect any assets files like css or images.
 composer require elic-dev/laravel-site-protection
 ```
 
-## Laravel >= 5.2
+### Laravel >= 5.2
 
 This package requires at least the Laravel Framework of version **5.2**.
-
-### Setup
 
 Add ServiceProvider to the providers array in `app/config/app.php`.
 
@@ -27,7 +25,13 @@ Add ServiceProvider to the providers array in `app/config/app.php`.
 ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
 ```
 
-Add Middleware to `app/Http/Kernel.php`.
+### Laravel >= 5.5
+
+You don't need to add this package to your `app/config/app.php` since it supports auto discovery.
+
+### Add Middleware
+
+Add Middleware to `app/Http/Kernel.php` or specific routes you want to protect.
 
 ```
 protected $middlewareGroups = [
@@ -38,6 +42,8 @@ protected $middlewareGroups = [
     ...
 ];
 ```
+
+### Configuration
 
 Add your password to `.env`. You can use multiple passwords separated by comma.
 
