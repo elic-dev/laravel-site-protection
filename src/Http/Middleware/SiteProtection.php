@@ -18,7 +18,7 @@ class SiteProtection
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        $password = env('SITE_PROTECTION_PASSWORDS');
+        $password = config('site-protection.passwords');
 
         if (empty($password)) {
             return $next($request);
