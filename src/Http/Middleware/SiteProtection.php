@@ -28,7 +28,7 @@ class SiteProtection
         $passwords = explode(',', $password);
         $skipEnvironments = explode(',', $skipEnvironment);
 
-        if (in_array(App::environment(), $skipEnvironments)) {
+        if (in_array(\App::environment(), $skipEnvironments)) {
             return $next($request);
         }
 
