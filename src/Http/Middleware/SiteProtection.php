@@ -19,12 +19,18 @@ class SiteProtection
     public function handle($request, Closure $next, $guard = null)
     {
         $password = config('site-protection.passwords');
+        $skipEnvironment = config('site-protection.skip_environments');
 
         if (empty($password)) {
             return $next($request);
         }
 
         $passwords = explode(',', $password);
+        $skipEnvironments = explode(',', $skipEnvironment);
+
+        if (in_array(App::environment(), $skipEnvironments)) {
+            return $next($request);
+        }
 
         if (in_array($request->get('site-password-protected'), $passwords)) {
             setcookie('site-password-protected', encrypt($request->get('site-password-protected')), 0, '/');
