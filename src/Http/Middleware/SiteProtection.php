@@ -19,6 +19,11 @@ class SiteProtection
     public function handle($request, Closure $next, $guard = null)
     {
         $password = config('site-protection.passwords');
+        $exceptPaths = explode(',', config('site-protection.except_paths'));
+
+        if (in_array($request->path(), $exceptPaths)) {
+            return $next($request);
+        }
 
         if (empty($password)) {
             return $next($request);
