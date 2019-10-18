@@ -4,6 +4,7 @@ namespace ElicDev\SiteProtection\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Arr;
 
 class SiteProtection
 {
@@ -32,7 +33,7 @@ class SiteProtection
         }
 
         try {
-            $usersPassword = decrypt(array_get($_COOKIE, 'site-password-protected'));
+            $usersPassword = decrypt(Arr::get($_COOKIE, 'site-password-protected'));
             if (in_array($usersPassword, $passwords)) {
                 return $next($request);
             }
