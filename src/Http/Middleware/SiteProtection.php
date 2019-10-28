@@ -32,7 +32,7 @@ class SiteProtection
         }
 
         try {
-            $usersPassword = decrypt(array_get($_COOKIE, 'site-password-protected'));
+            $usersPassword = decrypt(\Arr::get($_COOKIE, 'site-password-protected'));
             if (in_array($usersPassword, $passwords)) {
                 return $next($request);
             }
