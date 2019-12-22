@@ -20,6 +20,14 @@ class SiteProtection
     public function handle($request, Closure $next, $guard = null)
     {
         $password = config('site-protection.passwords');
+        $configProtectedPaths = config('site-protection.protected_paths');
+        if ($configProtectedPaths !== false) {
+            $protectedPaths = explode(',', $configProtectedPaths);
+
+            if (!in_array($request->path(), $protectedPaths)) {
+                return $next($request);
+            }
+        }
 
         if (empty($password)) {
             return $next($request);
