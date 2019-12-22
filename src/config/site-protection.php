@@ -13,5 +13,6 @@ return [
     */
 
     'passwords' => env('SITE_PROTECTION_PASSWORDS'),
+    'protected_paths' => env('SITE_PROTECTION_PROTECTED_PATHS'),
 
 ];
