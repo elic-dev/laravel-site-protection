@@ -9,6 +9,10 @@ removed, the access is revoked.
 
 This does not protect any assets files like css or images.
 
+__Looks like__
+
+![SiteProtection](https://raw.githubusercontent.com/elic-dev/laravel-site-protection/master/preview.png)
+
 ## Installation
 
 ```
