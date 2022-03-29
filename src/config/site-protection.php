@@ -14,4 +14,27 @@ return [
 
     'passwords' => env('SITE_PROTECTION_PASSWORDS'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Except certain paths
+    |--------------------------------------------------------------------------
+    |
+    |
+    |
+    |
+    */
+
+    'except_paths' => env('SITE_PROTECTION_EXCEPT_PATHS'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Protect only specific paths
+    |--------------------------------------------------------------------------
+    |
+    |
+    |
+    |
+    */
+
+    'protected_only_paths' => env('SITE_PROTECTION_PROTECTED_ONLY_PATHS'),
 ];

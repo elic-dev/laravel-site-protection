@@ -45,7 +45,12 @@ protected $middlewareGroups = [
 
 ### Configuration
 
-Add your password to `.env`. You can use multiple passwords separated by comma.
+Most configuration can be done using ENV variables by adding the following keys
+to your `.env` file. 
+
+#### Adjusting the passwords
+
+You can use multiple passwords separated by comma.
 
 ```
 SITE_PROTECTION_PASSWORDS=password1,password2
@@ -53,6 +58,24 @@ SITE_PROTECTION_PASSWORDS=password1,password2
 
 To revoke access to your site simply change the password. This requires every
 user using the old password to re-enter a password.
+
+#### Exclude certain paths from protection
+
+You can exclude specific paths from protection. Add a comma seperated list of paths to your
+`.env` file. You can use the `*` to exclude a group of paths.
+
+```
+SITE_PROTECTION_EXCEPT_PATHS=path1,path2,login*
+```
+
+#### Protect only specific paths
+
+You can protect only some paths. Add a comma seperated list of paths to your
+`.env` file. You can use the `*` to protect a a group of paths.
+
+```
+SITE_PROTECTION_PROTECTED_ONLY_PATHS=path1,path2,admin*
+```
 
 ### Customization
 
