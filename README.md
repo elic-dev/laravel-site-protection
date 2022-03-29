@@ -77,9 +77,21 @@ You can protect only some paths. Add a comma seperated list of paths to your
 SITE_PROTECTION_PROTECTED_ONLY_PATHS=path1,path2,admin*
 ```
 
+#### Set a CSS file uri
+
+You can change the look and feel of the password protection page by adding an uri
+to your main css file. The css file is appened to the existing css styles to keep 
+basic alignments.
+
+```
+SITE_PROTECTION_CSS_FILE_URI=/assets/app.css
+```
+
 ### Customization
 
-You can modify the view that handles password entry by publishing the views to your resource folder.
+In case you really need to. You can modify the view that handles password entry by publishing the views to your 
+resource folder. This is not recommended and might cause problems on future updates. Try using the uri to a css
+file first.
 
 Run the following command:
 

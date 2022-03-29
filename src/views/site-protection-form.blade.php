@@ -47,6 +47,11 @@
                 color: #d9534f;
             }
         </style>
+
+        @if (config('site-protection.css_file_uri'))
+            <link href="{{ config('site-protection.css_file_uri') }}" rel="stylesheet" >
+        @endif
+
     </head>
     <body>
         <div class="container">
