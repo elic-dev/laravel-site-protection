@@ -91,6 +91,15 @@ basic alignments.
 SITE_PROTECTION_CSS_FILE_URI=/assets/app.css
 ```
 
+#### Cookie lifetime
+
+Set the duration for the cookie lifetime in seconds. Default is set to one year. 
+The following `.env` value would change it to one week:
+
+```
+SITE_PROTECTION_COOKIE_LIFETIME=604800
+```
+
 ### Customization
 
 In case you really need to. You can modify the view that handles password entry by publishing the views to your 

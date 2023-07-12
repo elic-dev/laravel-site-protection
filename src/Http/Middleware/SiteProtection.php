@@ -30,8 +30,7 @@ class SiteProtection
         $passwords = explode(',', $password);
 
         if (in_array($request->get('site-password-protected'), $passwords)) {
-            // set cookie valid for one year
-            setcookie('site-password-protected', encrypt($request->get('site-password-protected')), time() + (365 * 24 * 60 * 60), '/');
+            setcookie('site-password-protected', encrypt($request->get('site-password-protected')), time() + config('site-protection.cookie_lifetime'), '/');
             return redirect($request->url());
         }
 

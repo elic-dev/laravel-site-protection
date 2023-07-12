@@ -49,4 +49,16 @@ return [
     */
 
     'css_file_uri' => env('SITE_PROTECTION_CSS_FILE_URI'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cookie lifetime
+    |--------------------------------------------------------------------------
+    |
+    |
+    |
+    |
+    */
+
+    'cookie_lifetime' => env('SITE_PROTECTION_COOKIE_LIFETIME', 365*24*60*60),
 ];
