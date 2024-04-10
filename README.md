@@ -33,7 +33,7 @@ ElicDev\SiteProtection\SiteProtectionServiceProvider::class,
 
 You don't need to add this package to your `app/config/app.php` since it supports auto discovery.
 
-### Add Middleware
+### Add Middleware (Laravel < 11.0)
 
 Add Middleware to `app/Http/Kernel.php` or specific routes you want to protect.
 
@@ -45,6 +45,16 @@ protected $middlewareGroups = [
     ],
     ...
 ];
+```
+
+### Add Middleware (Laravel >= 11.0)
+
+Edit Middleware at `config/app.php` and include against the 'web' middleware.
+
+```
+ ->withMiddleware(function (Middleware $middleware) {
+        $middleware->appendToGroup('web',\ElicDev\SiteProtection\Http\Middleware\SiteProtection::class);
+    })
 ```
 
 ### Configuration
